@@ -54,7 +54,7 @@ for key, value in tiers.items():
 output.close()
 
 if not filecount:
-    print("No files found. Copy your EAF files/folders into the \'eaf\' folder.")
+    print("No files found. Copy your EAF files/folders into the \'"+eafpath+"\' folder.")
     sys.exit()
 
 if fileerror:
