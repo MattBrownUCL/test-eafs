@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import os
 import sys
 
-eafpath = '.\\eaf'
+eafpath = 'input'
 tiers = {}
 filecount = 0
 tiercount = 0
@@ -10,8 +10,10 @@ fileerror = False
 tiererror = False
 
 if not os.path.isdir(eafpath):
-	print("Error: could not find \'eaf\' subfolder.")
-	sys.exit()
+        print("Warning: could not find \'"+eafpath+"\' folder, creating one.")
+        print("Copy your EAF files/folders into the '"+eafpath+"' folder.")
+        os.makedirs(eafpath)
+        sys.exit()
 
 print("Searching ...")
 
@@ -52,7 +54,7 @@ for key, value in tiers.items():
 output.close()
 
 if not filecount:
-    print("No files found.")
+    print("No files found. Copy your EAF files/folders into the \'eaf\' folder.")
     sys.exit()
 
 if fileerror:
