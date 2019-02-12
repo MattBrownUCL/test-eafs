@@ -56,12 +56,12 @@ if not filecount:
     sys.exit()
 
 if fileerror:
-    print("Warning: not all files have the same number of tiers! See output file: files.csv")
+    print("Warning: not all EAFs have the same number of tiers! (see files.csv)")
 else:
-    print("Relax ... all files have the same number of tiers.")
+    print("Relax! All EAFs have the same number of tiers (" + str(filecount) + ").")
     
 if tiererror:
-    print("Warning: not all tiers are found in all files! See output file: tiers.csv")
+    print("Warning: not all tiers are found in all EAFs! (see tiers.csv)")
 else:
-    print("That's nice ... all tiers are found in the same number of files.")
+    print("That's nice! All tiers are found in the same number of EAFs (" + str(tiercount) +").")
 
