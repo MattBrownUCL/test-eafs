@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import os
+import sys
 
 eafpath = '.\\eaf'
 tiers = {}
@@ -7,6 +8,12 @@ filecount = 0
 tiercount = 0
 fileerror = False
 tiererror = False
+
+if not os.path.isdir(eafpath):
+	print("Error: could not find \'eaf\' subfolder.")
+	sys.exit()
+
+print("Searching ...")
 
 output = open("files.csv","w")
 
@@ -44,12 +51,17 @@ for key, value in tiers.items():
 
 output.close()
 
+if not filecount:
+    print("No files found.")
+    sys.exit()
+
 if fileerror:
-    print("Warning: not all files have the same number of tiers!")
+    print("Warning: not all files have the same number of tiers! See output file: files.csv")
 else:
     print("Relax ... all files have the same number of tiers.")
+    
 if tiererror:
-    print("Warning: not all tiers are found in all files!")
+    print("Warning: not all tiers are found in all files! See output file: tiers.csv")
 else:
     print("That's nice ... all tiers are found in the same number of files.")
 
