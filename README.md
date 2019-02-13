@@ -1,5 +1,5 @@
 # test-eafs
-Does some sanity checking on a collection of ELAN EAFs. 
+Does some sanity checking on a collection of ELAN EAF files (https://tla.mpi.nl/tools/tla-tools/elan/). 
 
 Copy your EAF files/folders into a folder called 'input' in the same location as the script. This folder will be searched recursively for any EAF files.
 
